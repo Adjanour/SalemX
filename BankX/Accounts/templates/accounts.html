@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for account in accounts %}
+    <div class="sub-container">
+        
+        <div class="form-label"><strong>Account Number: </strong>{{ account.account_number }}</div>
+        <div class="form-control">{{ account.user.username}}</div>
+        <div class="form-control">{{ account.account_type }}</div>
+        <div class="form-control">{{ account.account_balance }}</div>
+    </div><br>
+    
+
+{% endfor %}
+
+{% endblock %}

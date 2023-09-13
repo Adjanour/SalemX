@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Create an Account</h1>
+
+{% if form.errors %}
+<p>There were some errors with your form submission. Please correct the errors and try again.</p>
+{% endif %}
+
+<form action="/create_account" method="post">
+  {% csrf_token %}
+  <table class="table">
+    <tr>
+        <td>{{ form.account_type.label}}</td>
+        <td>{{ form.account_type }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.initial_deposit.label}}</td>
+        <td>{{ form.initial_deposit }}</td>
+    </tr>
+    <tr>
+      <td>{{ form.account_pin.label }}</td>
+      <td>{{ form.account_pin }}</td>
+  </tr>
+    </table>
+  <input class="btn btn-primary" type="submit" value="Create Account">
+</form>
+{% endblock %}

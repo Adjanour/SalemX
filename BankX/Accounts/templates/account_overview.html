@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4" style="">
+    <h1 style="margin:auto;">Account Overview</h1>
+    <p><strong>Username:</strong> <label class="form-control">{{ user.username }} </label></p>
+    <p><strong>Account Number:</strong> <label class="form-control">{{ account.account_number }} </label></p>
+    <p><strong>Account Type:</strong><label class="form-control"> {{ account.account_type }}</label></p>
+    <p><strong>Account Balance:</strong><label class="form-control"> ${{ account.account_balance }}</label></p>
+    
+    {% comment %} <a href="{% url 'deposit' account.account_no %}" class="btn btn-primary">Deposit Money</a>
+    <a href="{% url 'withdraw' account.account_no %}" class="btn btn-primary">Withdraw Money</a>
+    <a href="{% url 'delete_account' account.account_no %}" class="btn btn-danger">Delete Account</a>
+ {% endcomment %}
+</div>
+{% endblock %}

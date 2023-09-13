@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Deposit Money</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="amount">Amount to Deposit:</label>
+        <input type="number" class="form-control" id="amount" name="amount" required>
+      </div>
+      <div class="form-group">
+        <label for="pin">PIN:</label>
+        <input type="password" class="form-control" id="pin" name="pin" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Deposit</button>
+    </form>
+  </div>
+{% endblock %}
